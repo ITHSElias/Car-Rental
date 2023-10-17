@@ -1,0 +1,128 @@
+﻿@page "/"
+@using Car_Rental.Business.Classes
+@using Car_Rental.Common.Interfaces
+@using Car_Rental.Common.Enums
+@inject BookingProcessor bp
+
+<PageTitle>Car Rental</PageTitle>
+
+<h1>Car rental</h1>
+
+<h3>Vehicles</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">RegNo</th>
+            <th scope="col">Make</th>
+            <th scope="col">Odometer</th>
+            <th scope="col">Cost/km</th>
+            <th scope="col">Vehicle Type</th>
+            <th scope="col">Cost/Day</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var v in bp.GetVehicles())
+        {
+            <tr>
+                <th scope="row">@v.RegistrationNumber</th>
+                <td>@v.Make</td>
+                <td>@v.Odometer</td>
+                <td>@v.CostPerKm</td>
+                <td>@v.Type</td>
+                <td>@v.CostPerDay</td>
+                <td>@v.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Bookings</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">RegNo</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Km Rented</th>
+            <th scope="col">Km Returned</th>
+            <th scope="col">Rented</th>
+            <th scope="col">Returned</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var b in bp.GetBookings())
+        {
+            <tr>
+                <th scope="row">@b.BookingVehicle.RegistrationNumber</th>
+                <td>@b.BookingCustomer.LastName @b.BookingCustomer.FirstName (@b.BookingCustomer.SSN)</td>
+                @if (b.BookingClosed)
+                {
+                    <td>@(b.BookingVehicle.Odometer - b.KmDriven)</td>
+                }
+                else
+                {
+                    <td>@b.BookingVehicle.Odometer</td>
+                }
+                
+                @if (b.BookingClosed)
+                {
+                    <td>@b.BookingVehicle.Odometer</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                <td>@b.InitialDate</td>
+
+                @if (b.BookingClosed)
+                {
+                    <td>@b.ClosingDate</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+
+                @if (b.BookingClosed)
+                {
+                    <td>@b.Cost</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                @if (b.BookingClosed)
+                {
+                    <td>Closed</td>
+                }
+                else
+                {
+                    <td>Open</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Customers</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">SSN</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">First Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in bp.GetCustomers())
+        {
+            <tr>
+                <th scope="row">@c.SSN</th>
+                <td>@c.LastName</td>
+                <td>@c.FirstName</td>
+            </tr>
+        }
+    </tbody>
+</table>

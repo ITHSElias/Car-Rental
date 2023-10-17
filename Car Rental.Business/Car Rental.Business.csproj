@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Car_Rental.Business</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Car Rental.Data\Car Rental.Data.csproj" />
+    <ProjectReference Include="..\Car Rental.Common\Car Rental.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+  </ItemGroup>
+</Project>

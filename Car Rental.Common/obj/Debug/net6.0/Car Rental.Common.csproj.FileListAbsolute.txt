@@ -1,0 +1,12 @@
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/bin/Debug/net6.0/Car Rental.Common.deps.json
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/bin/Debug/net6.0/Car Rental.Common.dll
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/bin/Debug/net6.0/Car Rental.Common.pdb
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/obj/Debug/net6.0/Car Rental.Common.csproj.AssemblyReference.cache
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/obj/Debug/net6.0/Car Rental.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/obj/Debug/net6.0/Car Rental.Common.AssemblyInfoInputs.cache
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/obj/Debug/net6.0/Car Rental.Common.AssemblyInfo.cs
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/obj/Debug/net6.0/Car Rental.Common.csproj.CoreCompileInputs.cache
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/obj/Debug/net6.0/Car Rental.Common.dll
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/obj/Debug/net6.0/refint/Car Rental.Common.dll
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/obj/Debug/net6.0/Car Rental.Common.pdb
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Common/obj/Debug/net6.0/ref/Car Rental.Common.dll

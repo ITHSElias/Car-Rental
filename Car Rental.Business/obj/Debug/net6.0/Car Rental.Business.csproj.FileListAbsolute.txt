@@ -1,0 +1,17 @@
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/bin/Debug/net6.0/Car Rental.Business.deps.json
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/bin/Debug/net6.0/Car Rental.Business.dll
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/bin/Debug/net6.0/Car Rental.Business.pdb
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/bin/Debug/net6.0/Car Rental.Common.dll
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/bin/Debug/net6.0/Car Rental.Data.dll
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/bin/Debug/net6.0/Car Rental.Data.pdb
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/bin/Debug/net6.0/Car Rental.Common.pdb
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/obj/Debug/net6.0/Car Rental.Business.csproj.AssemblyReference.cache
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/obj/Debug/net6.0/Car Rental.Business.GeneratedMSBuildEditorConfig.editorconfig
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/obj/Debug/net6.0/Car Rental.Business.AssemblyInfoInputs.cache
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/obj/Debug/net6.0/Car Rental.Business.AssemblyInfo.cs
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/obj/Debug/net6.0/Car Rental.Business.csproj.CoreCompileInputs.cache
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/obj/Debug/net6.0/Car Rental.Business.csproj.CopyComplete
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/obj/Debug/net6.0/Car Rental.Business.dll
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/obj/Debug/net6.0/refint/Car Rental.Business.dll
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/obj/Debug/net6.0/Car Rental.Business.pdb
+/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental.Business/obj/Debug/net6.0/ref/Car Rental.Business.dll
