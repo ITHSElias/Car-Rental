@@ -11,6 +11,7 @@ public interface IVehicle
     public double CostPerKm { get; init; }
     public int CostPerDay { get; init; }
     public VehicleStatuses Status { get; set; }
+    public int Id { get; init; }
 
     public void BookVehicle();
     public void ReturnVehicle();

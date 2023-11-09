@@ -18,10 +18,30 @@
             <th scope="col">Cost/km</th>
             <th scope="col">Vehicle Type</th>
             <th scope="col">Cost/Day</th>
+            <th scope="col">Action</th>
             <th scope="col">Status</th>
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <th scope="row"><input disabled="@bp.OngoingProcess" placeholder="RegNo" @bind="bp.InputRegNo" /></th>
+            <td><input disabled="@bp.OngoingProcess" placeholder="Make" @bind="bp.InputMake" /></td>
+            <td><input disabled="@bp.OngoingProcess" @bind="bp.InputOdometer" /></td>
+            <td><input disabled="@bp.OngoingProcess" @bind="bp.InputCostPerKm" /></td>
+            <td>
+                <select disabled="@bp.OngoingProcess" @bind="bp.InputVehicleType">
+                    @foreach (string s in bp.VehicleTypeNames)
+                    {
+                        <option value="@s">@s</option>
+                    }
+                </select>
+            </td>
+            <td><input disabled="@bp.OngoingProcess" @bind="bp.InputCostPerDay" /></td>
+            <td><button class="btn btn-outline-success" disabled="@bp.OngoingProcess" @onclick="() => bp.AddVehicle(bp.InputRegNo, bp.InputMake, bp.InputVehicleType, bp.InputOdometer, bp.InputCostPerKm, bp.InputCostPerDay)">Add</button></td>
+            <td>
+                <span class="badge text-bg-warning">@(bp.OngoingProcess ? "Processing. . ." : "")</span>
+            </td>
+        </tr>
         @foreach (var v in bp.GetVehicles())
         {
             <tr>
@@ -31,7 +51,35 @@
                 <td>@v.CostPerKm</td>
                 <td>@v.Type</td>
                 <td>@v.CostPerDay</td>
-                <td>@v.Status</td>
+                <td>
+                    @if (v.Status == VehicleStatuses.Available)
+                    {
+                        <select disabled="@bp.OngoingProcess" @bind="bp.InputBookingCustomerSSN">
+                            @foreach (IPerson p in bp.GetCustomers())
+                            {
+                                <option value="@p.SSN">@($"{p.FirstName} {p.LastName}")</option>
+                            }
+                        </select>
+                        <button class="btn btn-outline-primary" disabled="@bp.OngoingProcess" @onclick="async ()  => await bp.RentVehicle(v.RegistrationNumber, bp.InputBookingCustomerSSN)">Rent</button>
+                    }
+                    else
+                    {
+                        <input disabled="@bp.OngoingProcess" @bind="bp.InputReturnDistance" />
+                        <button class="btn btn-outline-success" disabled="@bp.OngoingProcess" @onclick="()  => bp.ReturnVehicle(v.RegistrationNumber)">Return</button>
+                    }
+                </td>
+                @if (v.Status == VehicleStatuses.Available)
+                {
+                    <td>
+                        <span class="badge text-bg-success">@v.Status</span>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <span class="badge text-bg-danger">@v.Status</span>
+                    </td>
+                }
             </tr>
         }
     </tbody>
@@ -57,52 +105,27 @@
             <tr>
                 <th scope="row">@b.BookingVehicle.RegistrationNumber</th>
                 <td>@b.BookingCustomer.LastName @b.BookingCustomer.FirstName (@b.BookingCustomer.SSN)</td>
-                @if (b.BookingClosed)
-                {
-                    <td>@(b.BookingVehicle.Odometer - b.KmDriven)</td>
-                }
-                else
-                {
-                    <td>@b.BookingVehicle.Odometer</td>
-                }
-                
-                @if (b.BookingClosed)
-                {
-                    <td>@b.BookingVehicle.Odometer</td>
-                }
-                else
-                {
-                    <td></td>
-                }
-                <td>@b.InitialDate</td>
-
-                @if (b.BookingClosed)
-                {
-                    <td>@b.ClosingDate</td>
-                }
-                else
-                {
-                    <td></td>
-                }
-
-                @if (b.BookingClosed)
-                {
-                    <td>@b.Cost</td>
-                }
-                else
-                {
-                    <td></td>
-                }
-                @if (b.BookingClosed)
-                {
-                    <td>Closed</td>
-                }
-                else
-                {
-                    <td>Open</td>
-                }
-            </tr>
-        }
+                <td>@(b.BookingClosed ? b.BookingVehicle.Odometer - b.KmDriven : @b.BookingVehicle.Odometer)</td>
+                <td>@(b.BookingClosed ? b.BookingVehicle.Odometer : "")</td>
+                <td>
+                    @b.InitialDate
+            </td>
+            <td>@(b.BookingClosed ? b.ClosingDate : "")</td>
+            <td>@(b.BookingClosed ? b.Cost : "")</td>
+            @if (b.BookingClosed)
+            {
+                <td>
+                    <span class="badge text-bg-success">Closed</span>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <span class="badge text-bg-danger">Open</span>
+                </td>
+            }
+        </tr>
+    }
     </tbody>
 </table>
 
@@ -116,6 +139,11 @@
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <th scope="row"><input placeholder="SSN" @bind="bp.InputSSN" /></th>
+            <td><input placeholder="Last Name" @bind="bp.InputLastName" /></td>
+            <td><input placeholder="First Name" @bind="bp.InputFirstName" /> <button class="btn btn-outline-success" @onclick="() => bp.AddCustomer(bp.InputSSN, bp.InputFirstName, bp.InputLastName)">Add</button></td>
+        </tr>
         @foreach (var c in bp.GetCustomers())
         {
             <tr>
@@ -126,3 +154,11 @@
         }
     </tbody>
 </table>
+
+@if (bp.Message.Length > 0)
+{
+    <div class="alert alert-danger" role="alert">
+        @bp.Message
+        <button class="btn btn-outline-danger" @onclick="() => bp.ClearMessage()">OK</button>
+    </div>
+}

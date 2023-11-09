@@ -1,17 +1,20 @@
-﻿using Car_Rental.Common.Enums;
+﻿using System.Linq.Expressions;
+using Car_Rental.Common.Enums;
 using Car_Rental.Common.Interfaces;
 
 namespace Car_Rental.Data.Interfaces;
 
 public interface IData
 {
-    IEnumerable<IPerson> GetPersons();
-    IEnumerable<IVehicle> GetVehicles(VehicleStatuses status = default);
-    IEnumerable<IBooking> GetBookings();
-    //IBooking GetBooking(int vehicleId);
-    //IPerson GetPerson(string socialSecurityNumber);
-    //IPerson GetPerson(int id);
-    //IVehicle GetVehicle(string registrationNumber);
-    //IVehicle GetVehicle(int id);
+    List<T> Get<T>(Func<T, bool>? expression);
+    T? Single<T>(Func<T, bool>? expression);
+    public void Add<T>(T item);
+
+    int NextVehicleId { get; }
+    int NextPersonId { get; }
+    int NextBookingId { get; }
+
+    public string[] VehicleStatusNames() => Enum.GetNames(typeof(VehicleStatuses));
+    public string[] VehicleTypeNames() => Enum.GetNames(typeof(VehicleTypes));
 }
 

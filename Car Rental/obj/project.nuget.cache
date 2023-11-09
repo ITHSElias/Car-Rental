@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UZLpuASXm7YFKJnksy4pz9BYjRsQRdXX4Byjfa292PGlF6QR6SmU8X3nZZlEXAsVzo9zzq9Dh+1r3jzErjMLQg==",
+  "dgSpecHash": "3NNPnwDGiOLJ6Fjxt8ksEbh62ceoXBg8NyoGD3ViDXUT8rJI5cCYWZRUTNAfKfx+h5Ki5tngQCnEmoeQxsaEvA==",
   "success": true,
   "projectFilePath": "/Users/elias/Desktop/ITHS projects/Car Rental Assignment/Car Rental/Car Rental.csproj",
   "expectedPackageFiles": [
@@ -33,7 +33,7 @@
     "/Users/elias/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/elias/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
     "/Users/elias/.nuget/packages/system.text.json/6.0.0/system.text.json.6.0.0.nupkg.sha512",
-    "/Users/elias/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/6.0.23/microsoft.netcore.app.runtime.mono.browser-wasm.6.0.23.nupkg.sha512"
+    "/Users/elias/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/6.0.24/microsoft.netcore.app.runtime.mono.browser-wasm.6.0.24.nupkg.sha512"
   ],
   "logs": []
 }
